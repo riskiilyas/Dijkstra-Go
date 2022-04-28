@@ -10,8 +10,8 @@ Dijkstra Pathfinding Visualisation App
 
 ## Screenshots
 <p>
-<img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/splash_dijkstra_go.jpg" border="0" width="240">
-<img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/1.jpg" border="0" width="240">
-<img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/2.jpeg" border="0" width="240">
-<img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/3.jpeg" border="0" width="240">
+<img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/splash_dijkstra_go.jpg" border="0" width="200">
+<img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/1.jpg" border="0" width="200">
+<img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/2.jpeg" border="0" width="200">
+<img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/3.jpeg" border="0" width="200">
 </p>
