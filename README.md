@@ -15,3 +15,8 @@ Dijkstra Pathfinding Visualisation App
 <img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/2.jpeg" border="0" width="200">
 <img src="https://github.com/riskiilyas/Dijkstra-Go/blob/master/Assets/3.jpeg" border="0" width="200">
 </p>
+
+## Components
+- Custom View with Canvas
+- Kotlin Coroutine
+- Dijkstra Algorithm
