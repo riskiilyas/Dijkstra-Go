@@ -12,12 +12,14 @@ import android.view.MotionEvent
 import android.view.View
 
 class PanelView(context: Context, attributeSet: AttributeSet) : View(context, attributeSet) {
-    // 0 = Empty
-    // -1 = Blocks
-    // 1 = Start
-    // 2 = End
-    // 3 = Visited
-    // 4 = Path
+/*
+      0 = Empty
+     -1 = Blocks
+      1 = Start
+      2 = End
+      3 = Visited
+      4 = Path
+*/
 
     private var mMatrix = mutableListOf<MutableList<Int>>()
 
@@ -125,7 +127,6 @@ class PanelView(context: Context, attributeSet: AttributeSet) : View(context, at
                         }
                         invalidate()
                     }
-
                 }
             }
         }

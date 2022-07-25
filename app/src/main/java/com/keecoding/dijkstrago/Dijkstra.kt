@@ -78,44 +78,28 @@ class Dijkstra(
                 if (y > 0) {
                     if (mMatrix[y - 1][x] == 0 || mMatrix[y - 1][x] == 2) {
                         watcher++
-                        startFinding(
-                            newPaths,
-                            x,
-                            y - 1
-                        )
+                        startFinding(newPaths, x, y - 1)
                     }
                 }
 
                 if (y < 15) {
                     if (mMatrix[y + 1][x] == 0 || mMatrix[y + 1][x] == 2) {
                         watcher++
-                        startFinding(
-                            newPaths,
-                            x,
-                            y + 1
-                        )
+                        startFinding(newPaths, x, y + 1)
                     }
                 }
 
                 if (x > 0) {
                     if (mMatrix[y][x - 1] == 0 || mMatrix[y][x - 1] == 2) {
                         watcher++
-                        startFinding(
-                            newPaths,
-                            x - 1,
-                            y
-                        )
+                        startFinding(newPaths, x - 1, y)
                     }
                 }
 
                 if (x < 7) {
                     if (mMatrix[y][x + 1] == 0 || mMatrix[y][x + 1] == 2) {
                         watcher++
-                        startFinding(
-                            newPaths,
-                            x + 1,
-                            y
-                        )
+                        startFinding(newPaths, x + 1, y)
                     }
                 }
             }
