@@ -38,7 +38,7 @@ class Dijkstra(
     ) {
         val newPaths = mutableListOf<Pair<Int, Int>>()
         paths.forEach { newPaths.add(it) }
-        if (paths.isNullOrEmpty()) {
+        if (paths.isEmpty()) {
             isFinding = true
             var x2 = -1
             var y2 = -1
@@ -63,7 +63,7 @@ class Dijkstra(
                     mMatrix[it.second][it.first] = 4
                 }
                 mMatrix[y][x] = 2
-                onFinish.invoke(mMatrix, paths.size - 1)
+                onFinish.invoke(mMatrix, paths.size)
                 return
             }
             if (mMatrix[y][x] != 1) {
@@ -75,33 +75,53 @@ class Dijkstra(
             GlobalScope.launch(Dispatchers.Default) {
                 delay(150)
 
-                if (y > 0) {
-                    if (mMatrix[y - 1][x] == 0 || mMatrix[y - 1][x] == 2) {
-                        watcher++
-                        startFinding(newPaths, x, y - 1)
+
+                launch {
+                    delay(60)
+
+                    if (y > 0) {
+                        if (mMatrix[y - 1][x] == 0 || mMatrix[y - 1][x] == 2) {
+                            watcher++
+                            startFinding(newPaths, x, y - 1)
+                        }
                     }
                 }
 
-                if (y < 15) {
-                    if (mMatrix[y + 1][x] == 0 || mMatrix[y + 1][x] == 2) {
-                        watcher++
-                        startFinding(newPaths, x, y + 1)
+                delay(60)
+                launch {
+
+                    if (y < 15) {
+                        if (mMatrix[y + 1][x] == 0 || mMatrix[y + 1][x] == 2) {
+                            watcher++
+                            startFinding(newPaths, x, y + 1)
+                        }
                     }
                 }
 
-                if (x > 0) {
-                    if (mMatrix[y][x - 1] == 0 || mMatrix[y][x - 1] == 2) {
-                        watcher++
-                        startFinding(newPaths, x - 1, y)
+                delay(60)
+
+                launch {
+
+                    if (x > 0) {
+                        if (mMatrix[y][x - 1] == 0 || mMatrix[y][x - 1] == 2) {
+                            watcher++
+                            startFinding(newPaths, x - 1, y)
+                        }
                     }
                 }
 
-                if (x < 7) {
-                    if (mMatrix[y][x + 1] == 0 || mMatrix[y][x + 1] == 2) {
-                        watcher++
-                        startFinding(newPaths, x + 1, y)
+                delay(60)
+
+                launch {
+
+                    if (x < 7) {
+                        if (mMatrix[y][x + 1] == 0 || mMatrix[y][x + 1] == 2) {
+                            watcher++
+                            startFinding(newPaths, x + 1, y)
+                        }
                     }
                 }
+
             }
         }
     }

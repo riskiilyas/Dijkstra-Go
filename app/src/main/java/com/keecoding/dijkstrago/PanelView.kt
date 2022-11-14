@@ -7,7 +7,6 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.util.AttributeSet
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 
@@ -196,7 +195,6 @@ class PanelView(context: Context, attributeSet: AttributeSet) : View(context, at
     fun provideMatrix() = mMatrix
 
     fun callback(mMatrix: MutableList<MutableList<Int>>) {
-        Log.d("DDD", "onCreate: CALLBACK")
         this.mMatrix = mMatrix
         invalidate()
     }
