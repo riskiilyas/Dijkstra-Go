@@ -62,7 +62,7 @@ class PanelView(context: Context, attributeSet: AttributeSet) : View(context, at
         blockPath.color = Color.LTGRAY
         blockPath.style = Paint.Style.FILL
 
-        for (i in 0 until 16) {
+        for (i in 0 until Constants.yBlocks) {
             mMatrix.add(mutableListOf())
         }
         initMatrix()
@@ -72,11 +72,11 @@ class PanelView(context: Context, attributeSet: AttributeSet) : View(context, at
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         mCanvas = canvas
-        hrBlocks = measuredWidth / 8
-        vrBlocks = measuredHeight / 16
+        hrBlocks = measuredWidth / Constants.xBlocks
+        vrBlocks = measuredHeight / Constants.yBlocks
 
-        for (y in 0 until 16) {
-            for (x in 0 until 8) {
+        for (y in 0 until Constants.yBlocks) {
+            for (x in 0 until Constants.xBlocks) {
                 val rect = Rect(x * hrBlocks, y * vrBlocks, (x + 1) * hrBlocks, (y + 1) * vrBlocks)
                 canvas?.drawRect(rect, blockStroke)
                 when (mMatrix[y][x]) {
@@ -101,8 +101,8 @@ class PanelView(context: Context, attributeSet: AttributeSet) : View(context, at
     }
 
     private fun redrawRect(x: Float, y: Float) {
-        for (i in 0 until 16) {
-            for (j in 0 until 8) {
+        for (i in 0 until Constants.yBlocks) {
+            for (j in 0 until Constants.xBlocks) {
                 if ((x > j * hrBlocks && x < (j + 1) * hrBlocks) && (y > i * vrBlocks && y < (i + 1) * vrBlocks)) {
                     val rect =
                         Rect(j * hrBlocks, i * vrBlocks, (j + 1) * hrBlocks, (i + 1) * vrBlocks)
@@ -132,8 +132,8 @@ class PanelView(context: Context, attributeSet: AttributeSet) : View(context, at
     }
 
     private fun removeDuplicate(mode: Int) {
-        for (i in 0 until 16) {
-            for (j in 0 until 8) {
+        for (i in 0 until Constants.yBlocks) {
+            for (j in 0 until Constants.xBlocks) {
                 if (mMatrix[i][j] == mode) mMatrix[i][j] = 0
             }
         }
@@ -144,8 +144,8 @@ class PanelView(context: Context, attributeSet: AttributeSet) : View(context, at
         rectStart = null
         rectEnd = null
         mode = MODE_BLOCK
-        for (i in 0 until 16) {
-            for (j in 0 until 8) {
+        for (i in 0 until Constants.yBlocks) {
+            for (j in 0 until Constants.xBlocks) {
                 mMatrix[i][j] = 0
             }
         }
@@ -153,8 +153,8 @@ class PanelView(context: Context, attributeSet: AttributeSet) : View(context, at
     }
 
     private fun initMatrix() {
-        for (i in 0 until 16) {
-            for (j in 0 until 8) {
+        for (i in 0 until Constants.yBlocks) {
+            for (j in 0 until Constants.xBlocks) {
                 mMatrix[i].add(0)
             }
         }

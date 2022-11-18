@@ -90,7 +90,7 @@ class Dijkstra(
                 delay(60)
                 launch {
 
-                    if (y < 15) {
+                    if (y < Constants.yBlocks-1) {
                         if (mMatrix[y + 1][x] == 0 || mMatrix[y + 1][x] == 2) {
                             watcher++
                             startFinding(newPaths, x, y + 1)
@@ -114,7 +114,7 @@ class Dijkstra(
 
                 launch {
 
-                    if (x < 7) {
+                    if (x < Constants.xBlocks-1) {
                         if (mMatrix[y][x + 1] == 0 || mMatrix[y][x + 1] == 2) {
                             watcher++
                             startFinding(newPaths, x + 1, y)
